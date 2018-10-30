@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {RulesServiceService} from '../../rules-service.service';
 
 @Component({
   selector: 'app-tree-edit',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreeEditComponent implements OnInit {
 
-  constructor() { }
+  @Input() display;
+  @Input() data;
+
+  constructor(private rulesService: RulesServiceService) { }
 
   ngOnInit() {
   }
 
+  onAdd(from: NgForm) {
+    const value = from.value;
+    console.log(value.name);
+    console.log(value.amount);
+    this.display = false;
+
+    let newNode = {
+      name: value.name,
+      amount: value.amount
+    };
+
+    this.rulesService.addChildNode(newNode, this.data);
+  }
 }

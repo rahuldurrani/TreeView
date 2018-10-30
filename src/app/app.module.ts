@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 
 import {TreeModule} from 'primeng/tree';
+import {DialogModule} from 'primeng/dialog';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +29,8 @@ import {ContextMenuModule} from 'primeng/contextmenu';
     FormsModule,
     AngularFontAwesomeModule,
     InplaceModule,
-    ContextMenuModule
+    ContextMenuModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,6 +25,8 @@ export class TreeViewComponent implements OnInit {
 
   items: MenuItem[];
 
+  displayAdd = false;
+
   ngOnInit() {
     this.hierarchy = {
       'data': [
@@ -149,11 +151,7 @@ export class TreeViewComponent implements OnInit {
 
   addChildNode(selectedNode: TreeNode) {
     console.log(selectedNode);
-    selectedNode.children.push({
-      'label': 'New Node',
-      'data': 'De Niro Movies',
-      'icon': 'fa fa-file-video-o'
-    });
+    this.displayAdd = true;
   }
 
   edit() {
